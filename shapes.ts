@@ -15,7 +15,6 @@ class Rectange extends Shape {
   constructor(public width: number, public height: number) {
     super();
   }
-
   getArea(): number {
     return this.width * this.height;
   }
@@ -27,5 +26,7 @@ class Square extends Rectange {
   }
 }
 
-let s = new Square(100);
-console.log("area = ", s.getArea());
+const shape = new Square(100);
+const area = shape.getArea();
+
+console.log("area = ", area);
