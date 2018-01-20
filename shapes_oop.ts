@@ -28,7 +28,7 @@ class Square extends Rectange {
   }
 }
 
-const shape = new Square(100);
-const area = shape.getArea();
+const shape: Shape = new Square(100);
+const area: number = shape.getArea();
 
 console.log("area = ", area);
