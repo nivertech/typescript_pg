@@ -9,7 +9,7 @@ type Shape =
   { kind: "rectangle", w: number, h: number } |
   { kind: "square", size: number }
 
-function assertNever(obj: never) {
+function assertNever(obj: never): void {
   throw new Error("never");
 }
 

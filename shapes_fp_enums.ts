@@ -12,7 +12,7 @@ type Shape =
   { kind: eShape.Rectangle, w: number, h: number } |
   { kind: eShape.Square, size: number }
 
-function assertNever(obj: never) {
+function assertNever(obj: never): void {
   throw new Error("never");
 }
 
