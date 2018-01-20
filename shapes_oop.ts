@@ -31,4 +31,5 @@ class Square extends Rectange {
 const shape: Shape = new Square(100);
 const area: number = shape.getArea();
 
-console.log("area = ", area);
+// TODO: how to print class name without adding a new method
+console.log(`area of ${shape.toString()} shape is ${area}`);

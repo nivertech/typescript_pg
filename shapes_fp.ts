@@ -30,4 +30,4 @@ function getArea(shape: Shape): number {
 const shape: Shape = { kind: "circle", radius: 10 };
 const area: number = getArea(shape);
 
-console.log("area = ", area);
+console.log(`area of ${shape.kind} shape is ${area}`);
