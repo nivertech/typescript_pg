@@ -3,11 +3,14 @@
 // kind property is the descriminant
 // called a literal types (a type that can only hold a single value)
 
+// enums numbered from 0 (i.e. ints), so strings are better for backward/future compatibility
+enum eShape {Circle, Rectangle, Square};
+
 type Shape =
-  //{ kind: "oval", r1: number, r2: number } |
-  { kind: "circle", radius: number } |
-  { kind: "rectangle", w: number, h: number } |
-  { kind: "square", size: number }
+  //{ kind: eShape.Oval, r1: number, r2: number } |
+  { kind: eShape.Circle, radius: number } |
+  { kind: eShape.Rectangle, w: number, h: number } |
+  { kind: eShape.Square, size: number }
 
 function assertNever(obj: never) {
   throw new Error("never");
@@ -15,11 +18,11 @@ function assertNever(obj: never) {
 
 function getArea(shape: Shape): number {
   switch (shape.kind) {
-    case "circle":
+    case eShape.Circle:
       return Math.PI * shape.radius ** 2;
-    case "rectangle":
+    case eShape.Rectangle:
       return shape.w * shape.h;
-    case "square":
+    case eShape.Square:
       return shape.size ** 2;
     //default:
     //  throw new Error("invalid shape");
@@ -27,7 +30,7 @@ function getArea(shape: Shape): number {
   assertNever(shape);
 }
 
-const shape: Shape = { kind: "circle", radius: 10 };
+const shape: Shape = { kind: eShape.Circle, radius: 10 };
 const area: number = getArea(shape);
 
 console.log("area = ", area);
